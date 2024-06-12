@@ -48,7 +48,6 @@ export default function MovieExpandedCard({
                         <h2>{movie.Title}</h2>
                         <div className="mov-view-item-details">
                             <span>
-                                {console.log(movie)}
                                 {movie.Year[movie.Year.length - 1] === "–" ? (
                                     <span>Since {movie.Year.slice(0, -1)}</span>
                                 ) : (
