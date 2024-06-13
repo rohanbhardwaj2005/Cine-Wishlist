@@ -590,15 +590,15 @@ main {
 }
 
 .imdb{
-  margin-top:5px;
-  width:42px;
-  height:42px;
+  width:70px;
+  height:32px;
+  align-content:center;
 }
 
 .mov-view-item-img {
   width: 100%;
-  height: 30%;
-  aspect-ratio: 16/9;
+  height:30%;
+  aspect-ratio: 16/16; 
   position: relative;
 }
 
@@ -782,8 +782,36 @@ main {
   header {
     padding: 16px 24px;
   }
+  
 
   main {
     padding: 48px 24px;
+  }
+}
+
+@media (min-width:340px){
+  .empty-state img{
+    width:100%;
+    align-content:center;
+    margin-left:1px;
+  }
+}
+
+@media (min-width:252px) and (max-width:339px){
+  .empty-state img{
+    width:100%;
+    align-content:center;
+    margin-left:2px;
+  }
+  .empty-state-list img{
+    align-content:center;
+    margin-left:70px;
+  }
+}
+
+@media (min-width:624px){
+  .empty-state img{
+    width:80%;
+    margin-left:55px;
   }
 }

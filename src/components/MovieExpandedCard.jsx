@@ -67,17 +67,25 @@ export default function MovieExpandedCard({
                                 <span>| </span>
                             )}
                             {movie.imdbRating === "N/A" ? null : (
-                                <span>
+                                <span style={{ display: "flex" }}>
                                     <img
                                         className="imdb"
-                                        src="src/assets/img/image2vector.svg"
+                                        src="src/assets/img/IMDb_logo.png"
                                         alt="IMDB logo"
                                     />
+                                    <span style={{marginTop:"5px"}}>{movie.imdbRating}</span>
                                 </span>
                             )}
-                            {movie.imdbRating === "N/A" ? null : (
-                                <span>{movie.imdbRating}</span>
-                            )}
+                            {/* {movie.imdbRating === "N/A" ? null : (
+                                <span
+                                    style={{
+                                        alignContent: "center",
+                                        marginRight: "20px",
+                                    }}
+                                >
+                                    {movie.imdbRating}
+                                </span>
+                            )} */}
                             {movie.Type === "series" ? (
                                 <span>
                                     {movie.totalSeasons === "N/A" ? (
