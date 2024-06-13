@@ -590,9 +590,9 @@ main {
 }
 
 .imdb{
-  width:70px;
-  height:32px;
-  align-content:center;
+  width:42px;
+  height:42px;
+  margin-top:0.15px;
 }
 
 .mov-view-item-img {

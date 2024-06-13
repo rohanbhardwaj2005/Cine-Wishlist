@@ -70,10 +70,16 @@ export default function MovieExpandedCard({
                                 <span style={{ display: "flex" }}>
                                     <img
                                         className="imdb"
-                                        src="public/IMDb_logo.png"
+                                        src="/image2vector.svg"
                                         alt="IMDB logo"
                                     />
-                                    <span style={{ marginTop: "5px" }}>
+                                    <span
+                                        style={{
+                                            marginTop: "12px",
+                                            paddingLeft: "8px",
+                                            fontSize: "15px",
+                                        }}
+                                    >
                                         {movie.imdbRating}
                                     </span>
                                 </span>
