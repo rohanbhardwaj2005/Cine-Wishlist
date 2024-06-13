@@ -71,7 +71,6 @@ export default function MovieExpandedCard({
                                     <img
                                         className="imdb"
                                         src="src/assets/img/IMDb_logo.png"
-{/*                                         src="src/assets/img/IMDb_logo.png" */}
                                         alt="IMDB logo"
                                     />
                                     <span style={{marginTop:"5px"}}>{movie.imdbRating}</span>
