@@ -70,7 +70,7 @@ export default function MovieExpandedCard({
                                 <span style={{ display: "flex" }}>
                                     <img
                                         className="imdb"
-                                        src="public/IMDb_logo.png"
+                                        src="/IMDb_logo.png"
                                         alt="IMDB logo"
                                     />
                                     <span style={{ marginTop: "5px" }}>
