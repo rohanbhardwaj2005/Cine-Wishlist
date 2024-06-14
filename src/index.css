@@ -815,3 +815,15 @@ main {
     margin-left:55px;
   }
 }
+
+@media (max-width:251px){
+  .empty-state img{
+    width:100%;
+    align-content:center;
+    margin-left:2px;
+  }
+  .empty-state-list img{
+    align-content:center;
+    margin-left:70px;
+  }
+}
