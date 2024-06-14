@@ -5,6 +5,8 @@ import BackButton from "./BackButton";
 import Button from "./Button";
 import PostMessage from "./PostMessage";
 import Rating from "./Rating";
+import MovieTrailers from "./MovieTrailers";
+
 
 export default function MovieExpandedCard({
     movie,
@@ -143,6 +145,7 @@ export default function MovieExpandedCard({
                                     )}
                                 </span>
                             )}
+                            <MovieTrailers imdbId={movie.imdbID}/>
                         </p>
 
                         {watchedList.some(

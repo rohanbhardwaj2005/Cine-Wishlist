@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+
 :root {
   --system-background: #1a1a1a;
   --system-text: #f0f6fc;
@@ -561,6 +562,31 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+}
+
+
+.button-trailer{
+  display:"flex";
+  align-content:center;
+  background-color: var(--system-blue); 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; 
+    
+}
+
+.button-trailer-icon{
+  margin-left:3px;
+  padding-right: 8px; 
+  width: 25px; 
+}
+
+.button-trailer:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
 }
 
 
