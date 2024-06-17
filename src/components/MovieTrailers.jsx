@@ -22,9 +22,9 @@ const MovieTrailer = ({ imdbId }) => {
       // Fetch the movie trailers using the TMDB ID
       const trailerResponse = await fetch(`https://api.themoviedb.org/3/movie/${tmdbId}/videos?api_key=${TMDB_API_KEY}`);
       const trailerData = await trailerResponse.json();
-      console.log(trailerData);
+      // console.log(trailerData);
       const youtubeTrailer = trailerData.results.find(video => video.site === 'YouTube' && (video.name.includes('Official Trailer') || video.name.includes('Trailer')));
-      console.log(youtubeTrailer);
+      // console.log(youtubeTrailer);
       if (!youtubeTrailer) {
         throw new Error('Trailer not found.');
       }

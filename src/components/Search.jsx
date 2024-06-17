@@ -3,8 +3,6 @@ import SearchInput from "./SearchInput";
 import { SearchIcon } from "@primer/octicons-react";
 import SearchResults from "./SearchResults";
 import MovieExpandedCard from "./MovieExpandedCard";
-import YouTube from "react-youtube";
-import { render } from "react-dom";
 
 const API_KEY = "a6f40067";
 
@@ -35,7 +33,7 @@ export default function Search({ watchedList, setWatchedList, isChildLockOn }) {
             if (data.Response === "False") {
                 throw new Error("Movie not found!");
             }
-            console.log(data.Search);
+            // console.log(data.Search);
             setSearchResults(
                 data.Search.filter(
                     ((item) =>
@@ -66,7 +64,7 @@ export default function Search({ watchedList, setWatchedList, isChildLockOn }) {
             const response = await fetch(
                 `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`,
             );
-            console.log(response);
+            // console.log(response);
             const data = await response.json();
             if (data.Response === "False") {
                 throw new Error("Movie not found!");
@@ -84,7 +82,22 @@ export default function Search({ watchedList, setWatchedList, isChildLockOn }) {
         fetchMovieDetail(id);
         setIsMovieExpanded(true);
     };
+    const handleCloseMovie = () => {
+        setIsMovieExpanded(false);
+    };
 
+    useEffect(function () {
+        function close(event) {
+            if (event.code === "Escape") {
+                handleCloseMovie();
+            }
+        }
+        document.addEventListener("keydown", close);
+
+        return function () {
+            document.removeEventListener("keydown", close);
+        };
+    });
     return (
         <div className="search">
             <div className="search-input">

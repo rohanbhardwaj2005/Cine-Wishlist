@@ -3,7 +3,6 @@ import Button from "./Button";
 import EmptyStateList from "./EmptyStateList";
 import EmptyStateGithub from "../assets/img/download.gif";
 import UserMovieListCard from "./UserMovieListCard";
-import ChildLock from "./ChildLock";
 
 export default function UserMoviesList({
     watchedList,
@@ -30,6 +29,23 @@ export default function UserMoviesList({
     const handleOpenMoviesList = () => {
         setIsUserMoviesListOpen(!isUserMoviesListOpen);
     };
+
+    const handleCloseMoviesList = () => {
+        setIsUserMoviesListOpen(false);
+    }
+
+    useEffect(() => {
+        function close(event){
+            if(event.code==="Escape"){
+                handleCloseMoviesList();
+            }
+        }
+        document.addEventListener("keydown",close);
+
+        return ()=>{
+            document.removeEventListener("keydown",close);
+        }
+    })
 
     const watchedListLength = watchedList.length;
 
