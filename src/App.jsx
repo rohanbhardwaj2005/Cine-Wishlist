@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import AppHeader from "./components/AppHeader";
 import Search from "./components/Search";
 
+
+
 export default function App() {
   const [isChildLockOn, setisChildLockOn] = useState(true);
   const [watchedList, setWatchedList] = useState(() => {

@@ -7,7 +7,6 @@ import PostMessage from "./PostMessage";
 import Rating from "./Rating";
 import MovieTrailers from "./MovieTrailers";
 
-
 export default function MovieExpandedCard({
     movie,
     isLoading,

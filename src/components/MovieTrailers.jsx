@@ -3,7 +3,7 @@ import { useState } from 'react';
 const TMDB_API_KEY = 'a50705bc1d965eab7f5fa2df02caaf8b';
 
 const MovieTrailer = ({ imdbId }) => {
-  console.log(imdbId);
+  // console.log(imdbId);
   const [trailerUrl, setTrailerUrl] = useState('');
   const [error, setError] = useState('');
 
@@ -14,7 +14,7 @@ const MovieTrailer = ({ imdbId }) => {
       const tmdbIdData = await tmdbIdResponse.json();
 
       if (tmdbIdData.movie_results.length === 0) {
-        throw new Error('Movie not found.');
+        throw new Error('Trailer not found.');
       }
 
       const tmdbId = tmdbIdData.movie_results[0].id;
@@ -22,8 +22,8 @@ const MovieTrailer = ({ imdbId }) => {
       // Fetch the movie trailers using the TMDB ID
       const trailerResponse = await fetch(`https://api.themoviedb.org/3/movie/${tmdbId}/videos?api_key=${TMDB_API_KEY}`);
       const trailerData = await trailerResponse.json();
-      
-      const youtubeTrailer = trailerData.results.find(video => video.site === 'YouTube' && video.type === 'Trailer');
+      console.log(trailerData);
+      const youtubeTrailer = trailerData.results.find(video => video.site === 'YouTube' && (video.name.includes('Official Trailer') || video.name.includes('Trailer')));
       console.log(youtubeTrailer);
       if (!youtubeTrailer) {
         throw new Error('Trailer not found.');

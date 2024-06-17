@@ -39,7 +39,9 @@ export default function Search({ watchedList, setWatchedList, isChildLockOn }) {
             setSearchResults(
                 data.Search.filter(
                     ((item) =>
-                        item.Type === "movie" || item.Type === "series") || [],
+                        item.Type === "movie" ||
+                        item.Type === "series" ||
+                        item.type === "episode") || [],
                 ),
             );
             {
